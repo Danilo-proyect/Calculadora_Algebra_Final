@@ -1,0 +1,85 @@
+/* Estilos base que ya tenías */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #232323;
+    display: grid;
+    place-items: center;
+}
+
+/* Calculadora: Ajustada para ser responsiva */
+.calculadora {
+    background-color: #6a6e73;
+    color: white;
+    width: 380px; /* Un poco más ancha para computadoras */
+    max-width: 95vw; /* En celulares, deja un pequeño margen a los lados */
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .5rem;
+    box-shadow: 0 0 20px #B2BEB5;
+}
+
+.pantalla {
+    grid-column: 1 / 5;
+    background-color: #1f2124;
+    padding: 1.5rem;
+    font-size: 2rem;
+    text-align: right;
+    border-radius: 1.5rem;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.btn {
+    background-color: #9fa3a9;
+    color: white;
+    border: 0;
+    padding: 1.5rem .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: black;
+}
+
+#cero {
+    grid-column: span 2;
+}
+
+#igual {
+    grid-row: span 2;
+    background-color: #e65766;
+}
+
+#igual:hover {
+    background-color: #e6394a;
+}
+
+/* --- BLOQUE DE RESPONSIVIDAD (LO NUEVO) --- */
+@media (max-width: 400px) {
+    .calculadora {
+        padding: 1rem;
+        gap: 0.3rem;
+    }
+
+    .pantalla {
+        font-size: 1.5rem; /* El número se achica para que no se corte en el celu */
+        padding: 1rem;
+    }
+
+    .btn {
+        padding: 1.2rem 0.5rem; /* Botones más cómodos para el dedo */
+    }
+}
